@@ -2,16 +2,50 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Set<Integer> intSet1 = new Set<>();
+        intSet1.add(1);
+        intSet1.add(2);
+        intSet1.add(2);
+        intSet1.add(3);
+        System.out.println("Size of intSet1: " + intSet1.size());
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Set<Integer> intSet2 = new Set<>();
+        intSet2.add(1);
+        intSet2.add(2);
+        intSet2.add(4);
+        System.out.println("Size of intSet2: " + intSet2.size());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("intSet1 contain 1? : " + intSet1.contains(1));
+        System.out.println("intSet2 is subset of intSet1? : " + intSet1.containsAll(intSet2.getAllElements()));
+
+        System.out.print("intSet1 ");
+        intSet1.printAll();
+
+        intSet2.add(5);
+        intSet2.remove(1);
+        System.out.print("intSet2 ");
+        intSet2.printAll();
+
+        System.out.println("------------------------");
+        System.out.println("intSet1 - intSet2");
+        intSet1.removeAll(intSet2.getAllElements());
+        System.out.print("intSet1 ");
+        intSet1.printAll();
+        System.out.println("------------------------");
+
+        intSet1.add(2);
+        System.out.println("intSet1 intersect intSet2");
+        intSet1.retainAll(intSet2.getAllElements());
+        System.out.print("intSet1 ");
+        intSet1.printAll();
+        System.out.println("------------------------");
+
+        intSet1.add(1);
+        intSet1.add(3);
+        System.out.println("intSet1 union intSet2");
+        intSet1.addAll(intSet2.getAllElements());
+        System.out.print("intSet1 ");
+        intSet1.printAll();
+
     }
 }

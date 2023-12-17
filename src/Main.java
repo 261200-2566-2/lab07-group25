@@ -28,14 +28,14 @@ public class Main {
 
         System.out.println("------------------------");
         System.out.println("intSet1 - intSet2");
-        intSet1.removeAll(intSet2.getAllElements());
+        intSet1.removeAll(intSet2);
         System.out.print("intSet1 ");
         intSet1.printAll();
         System.out.println("------------------------");
 
         intSet1.add(2);
         System.out.println("intSet1 intersect intSet2");
-        intSet1.retainAll(intSet2.getAllElements());
+        intSet1.retainAll(intSet2);
         System.out.print("intSet1 ");
         intSet1.printAll();
         System.out.println("------------------------");
@@ -43,7 +43,7 @@ public class Main {
         intSet1.add(1);
         intSet1.add(3);
         System.out.println("intSet1 union intSet2");
-        intSet1.addAll(intSet2.getAllElements());
+        intSet1.addAll(intSet2);
         System.out.print("intSet1 ");
         intSet1.printAll();
 

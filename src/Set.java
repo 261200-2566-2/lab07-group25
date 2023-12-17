@@ -27,19 +27,29 @@ public class Set<T> {
         return true;
     }
     //don't duplicate
-    public void addAll(Collection<T> element){
+    public void addAll(Set<T> a){
+        Collection<T> element = a.getAllElements();
         for(T elem : element){
             if(!containsAll(element)){
                 map.put(elem,null);
             }
         }
     }
-    public void removeAll(Collection<T> element){
+    public void addAll(Collection<T> element){ //overload
+        for(T elem : element){
+            if(!containsAll(element)){
+                map.put(elem,null);
+            }
+        }
+    }
+    public void removeAll(Set<T> a){
+        Collection<T> element = a.getAllElements();
         for (T elem : element) {
             map.remove(elem);
         }
     }
-    public void retainAll(Collection<T> element){
+    public void retainAll(Set<T> a){
+        Collection<T> element = a.getAllElements();
         Set<T> copySet = new Set<>();
         copySet.addAll(map.keySet());
         for (T elem : copySet.getAllElements()) {

@@ -49,7 +49,7 @@ public class HashSet<T> implements Set {
     public boolean addAll(Collection c) {
         boolean checked = false;
         for (Object o : c) {
-            if (map.put(o, true) == null) { // check and add new elements
+            if (map.put(o, true) == null) {
                 checked = true;
             }
         }
@@ -65,7 +65,7 @@ public class HashSet<T> implements Set {
     public boolean removeAll(Collection c) {
         boolean checked = false;
         for (Object o : c) {
-            if (map.remove(o) != null) { // check and remove existing elements
+            if (map.remove(o) != null) {
                 checked = true;
             }
         }

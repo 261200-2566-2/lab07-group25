@@ -2,21 +2,21 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Set<Integer> intSet1 = new Set<>();
+        HashSet<Integer> intSet1 = new HashSet<>();
         intSet1.add(1);
         intSet1.add(2);
         intSet1.add(2);
         intSet1.add(3);
         System.out.println("Size of intSet1: " + intSet1.size());
 
-        Set<Integer> intSet2 = new Set<>();
+        HashSet<Integer> intSet2 = new HashSet<>();
         intSet2.add(1);
         intSet2.add(2);
         intSet2.add(4);
         System.out.println("Size of intSet2: " + intSet2.size());
 
         System.out.println("intSet1 contain 1? : " + intSet1.contains(1));
-        System.out.println("intSet2 is subset of intSet1? : " + intSet1.containsAll(intSet2.getAllElements()));
+        System.out.println("intSet2 is subset of intSet1? : " + intSet1.containsAll(intSet2));
 
         System.out.print("intSet1 ");
         intSet1.printAll();
@@ -46,6 +46,11 @@ public class Main {
         intSet1.addAll(intSet2);
         System.out.print("intSet1 ");
         intSet1.printAll();
+        System.out.println("------------------------");
 
+        intSet1.clear();
+        System.out.print("intSet1 ");
+        intSet1.printAll();
+        System.out.println(intSet1.isEmpty());
     }
 }

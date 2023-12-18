@@ -21,9 +21,7 @@ public class HashSet<T> implements Set {
     }
 
     @Override
-    public Iterator iterator() {
-        return map.keySet().iterator();
-    }
+    public Iterator iterator() { return map.keySet().iterator();}
 
     @Override
     public Object[] toArray() {
@@ -49,7 +47,8 @@ public class HashSet<T> implements Set {
     public boolean addAll(Collection c) {
         boolean checked = false;
         for (Object o : c) {
-            if (map.put(o, true) == null) {
+            if(!containsAll(c)){
+                map.put(o,null);
                 checked = true;
             }
         }

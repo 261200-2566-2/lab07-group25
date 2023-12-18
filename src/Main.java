@@ -51,6 +51,7 @@ public class Main {
         intSet1.clear();
         System.out.print("intSet1 ");
         intSet1.printAll();
+        System.out.print("intSet1 is Empty? : ");
         System.out.println(intSet1.isEmpty());
     }
 }
